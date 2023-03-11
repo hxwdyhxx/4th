@@ -1,0 +1,315 @@
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 100;
+    .inner {
+        position: static;
+        display: flex;
+        height: 64px;
+        max-width: 1920px;
+        width: 100%;
+        padding: 0 104px 0 98px;
+
+        @include desktop{
+            height: 60px;
+            padding: 0 22px;
+            min-width: 320px;
+            max-width: 1320px;
+        }
+
+        
+    }
+    .logo {
+        display: flex;
+        align-items: center;
+        a {
+            display: block;
+            background-position: -105px 0;
+            width: 223px;
+            height: 35px;
+            @include desktop{
+                @extend .sp_mo; 
+                background-position: 0 0;
+                width: 160px;
+                height: 23px;
+            }
+        }
+    }
+
+    .gnb-wrap {
+        display: flex;
+        align-items: stretch;
+        margin-left: 29px;
+        flex: 1;
+
+    }
+    .gnb {
+        display: flex;
+        align-items: stretch;
+        flex-direction: row;
+        &.active{
+            &::before {
+                content: '';
+                position: absolute;
+                top: 64px;
+                left: 0;
+                width: 100%;
+                height: 182px;
+                background-color: rgba(255, 255, 255, 0.98);
+                z-index: -1;
+            }
+
+            .submenu-wrap {
+                display: block;
+                position: absolute;
+                top: 64px;
+            }
+            .submenu {
+                margin: 15px 0;
+            }
+            .submenu-list {
+                display: block;
+            }
+            .submenu-item {
+                padding: 3px 13px;
+            }
+        }
+
+        &-list {
+            display: flex;
+            align-items: center;
+            @include desktop{
+                display: none;
+            }
+                
+    
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+        &-item {
+            display: block;
+            padding: 0 10px;
+            font-size: 17px;
+            line-height: 32px;
+            letter-spacing: -.36px;
+    
+            span {
+                position: relative;
+            }
+    
+            &:hover, &.active {
+                span::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    height: 1px;
+                    background-color: #000;
+                }
+            }
+        }
+    }
+    .submenu-wrap{
+        display: none;
+    }
+    .util-list{
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        @include desktop{
+            display: none;
+        }
+    }
+}
+
+
+.util-list {
+    display: flex;
+    margin-left: auto;
+    font-size: 0;
+
+    
+}
+
+.menu-area {
+    display: none;
+
+    @include desktop {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+    }
+
+    .btn-menu {
+        @include desktop {
+            background-image: url(../images/sp_mo.png);
+            background-size: 195px 181px;
+            background-position: -85px -28px;
+            width: 20px;
+            height: 14px;
+            // display: block;
+
+            &.close {
+                background-image: url(../images/sp_mo.png);
+                background-size: 195px 181px;
+                background-position: -85px -49px;
+                width: 15px;
+                height: 15px;
+            }
+        }
+    }
+
+}
+.menu-wrap {
+    display: none;
+    
+    @include desktop {
+        // display: block;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0);
+
+        &.close {
+            pointer-events: none;
+        }
+
+        &.open {
+            pointer-events: all;
+            
+
+            .navigation {
+                transform: translateX(0);
+            }
+        }
+    }
+
+    &.open {
+        display: block;
+    }
+
+
+    
+}
+
+.navigation {
+    @include desktop {
+        
+    }
+}
+
+.wrap {
+    @include desktop {
+        padding-top: 60px;
+    }
+}
+
+@media all and (max-width: 1229px) {
+   
+
+    .header {
+
+        .navigation {
+            display: block;
+            position: fixed;
+            z-index: 1010;
+            top: 60px;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #fff;
+            overflow-y: auto;
+            transform: translateX(100%);
+            transition: all .3s ease-in-out;
+        }
+
+        .menu-list {
+            padding: 11px 0 9px;
+
+            .down-arrow {
+                display: inline-block;
+                vertical-align: top;
+                margin: 20px 0 0 4px;
+                background-image: url(../images/sp_mo.png);
+                background-size: 195px 181px;
+                background-position: -136px -49px;
+                width: 10px;
+                height: 6px;
+            }
+
+            &+.menu-list {
+                position: relative;
+                padding: 10px 0 11px;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 22px;
+                    right: 22px;
+                    height: 1px;
+                    background-color: #d0d0d0;
+                }
+            }
+
+        }
+
+        .menu-item {
+            font-family: "TTHoves", "NanumSquare", "나눔스퀘어", "돋움", dotum, arial, sans-serif;
+            font-size: 22px;
+            line-height: 46px;
+            letter-spacing: -0.44px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            .menu {
+                display: block;
+                padding: 0 22px;
+            }
+
+            &.active {
+                .menu {
+                    background-color: #f2f2f2;
+                }
+
+                .down-arrow {
+                    transform: rotate(-180deg);
+                }
+
+                .sub-list {
+                    display: block;
+                    padding: 3px 22px 15px;
+
+                    .menu {
+                        padding-left: 20px;
+                        font-size: 18px;
+                        line-height: 28px;
+                        letter-spacing: -0.36px;
+                        background-color: #fff;
+                        font-weight: normal;
+                    }
+                }
+
+                .sub-item {
+                    margin-top: 13px;
+                }
+            }
+        }
+
+        .sub-list {
+            display: none;
+        }
+
+        
+
+
+    }
+}

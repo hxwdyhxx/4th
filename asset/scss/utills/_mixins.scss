@@ -1,0 +1,97 @@
+ @mixin position($position:null) {
+    position: absolute;
+    @if($position=='ct'){
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    @else if($position=='vt'){
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    @else {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@mixin ellip {
+    overflow:hidden;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap;
+}
+
+@mixin ellipsis($line,$lineHeight) {
+    text-overflow: ellipsis; 
+    overflow: hidden; 
+    line-height: $lineHeight; 
+    max-height: $lineHeight*$line; 
+    -webkit-box-orient: vertical; 
+    -webkit-line-clamp: $line; 
+    display: -webkit-box; 
+}
+
+@mixin flex($flex:null) {
+    display: flex;
+    @if($flex=='jcac'){
+        justify-content: space-between;
+        align-items: center;
+    }
+    @else if($flex=='jcsb'){
+        justify-content: space-between;
+    }
+    @else {
+        justify-content: center;
+    }
+}
+
+
+@mixin keyframes($name){
+    @keyframes #{$name}{
+        @content;
+    }
+}
+
+
+
+
+/*반응형 화면 크기*/
+//중간중간은 분기점? 언제든지 넣을수있다.
+//pc 30 //tablet (x) m(30)
+
+// 작은피씨
+$desktop: 1229px; //-> [최소]1024
+
+// 테블릿 1024~768
+$tablet: 1024px; //[최소]768
+
+// 모바일
+$mobile: 768px; //[촛소]320
+
+
+
+
+@mixin desktop{
+    @media (max-width: $desktop){
+      @content;
+    }
+  }
+  
+@mixin tablet{
+    @media (max-width: $tablet){
+        @content;
+    }
+}
+  
+@mixin mobile{
+  @media (max-width: $mobile){
+    @content;
+  }
+}
+
+
+
+
+
+

@@ -1,0 +1,33 @@
+@include keyframes(fade-out){
+    0% {
+        opacity: 1;
+      }
+    
+      100% {
+        opacity: 0;
+      }
+}
+
+@include keyframes(wave-in) {
+    0% {
+        width: 0%;
+      }
+    
+      50% {
+        width: 50%;
+      }
+    
+      100% {
+        width: 100%;
+      }
+}
+
+@include keyframes(fade) {
+    0% {
+        opacity: 0;
+      }
+    
+      100% {
+        opacity: 1;
+      }
+}

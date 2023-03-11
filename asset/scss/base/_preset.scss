@@ -1,0 +1,266 @@
+.blind {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    margin: -1px;
+}
+
+.common-inner {
+    width: 1152px;
+    margin: 0 auto;
+}
+
+
+// ***************** 바로가기 ***************** //
+#skipNav {
+    position: relative;
+    z-index: 3000
+}
+
+#skipNav a {
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 138px;
+    border: 1px solid #4ec53d;
+    background: #333;
+    text-align: center
+}
+
+#skipNav a:active,
+#skipNav a:focus {
+    top: 0;
+    text-decoration: none;
+    z-index: 1000
+}
+
+#skipNav span {
+    display: inline-block;
+    padding: 2px 6px 0 0;
+    font-size: 13px;
+    line-height: 26px;
+    color: #fff;
+    letter-spacing: -1px;
+    white-space: nowrap
+}
+
+// ***************** 바로가기 끝 ***************** //
+
+
+// ***************** sp ***************** //
+
+.relate .relate-site::before,
+.sc-apply .link-apply .go-icon,
+.swiper-button-prev,
+.swiper-button-prev.swiper-button-disabled,
+.swiper-button-next,
+.swiper-button-next.swiper-button-disabled,
+.link-field .count::before,
+.sc-search .icon-box .icon,
+.sc-headerright .down-arrow,
+.header .logo a {
+    background-image: url(../images/sp_pc.png);
+    background-size: 328px 205px;
+}
+
+
+.sp-bg{
+    background-image: url(../images/sp_pc.png);
+    background-size: 328px 205px;
+}
+@include desktop{
+    .sp_mo{
+        background-image: url(../images/sp_mo.png);
+        background-size: 195px 181px;
+    }
+}
+
+
+
+// ***************** text ***************** //
+
+
+
+input::placeholder {
+    color: #d0d0d0;
+    opacity: 1;
+    font-weight: bold;
+    font-family: "NanumSquare", "나눔스퀘어", "돋움", dotum, arial, sans-serif;
+  }
+
+//   common
+
+
+.wrap {
+    padding-top: 64px;
+    @include desktop{
+        padding-top: 60px;
+    }
+    @include mobile {
+        // padding-bottom: 131px;
+        min-width: 320px;
+    }
+}
+
+
+.inner {
+    position: relative;
+    max-width: 1408px;
+    min-width: 1230px;
+    padding: 0 104px;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    @include mobile {
+        min-width: 320px;
+        max-width: 1320px;
+        padding: 0 22px;
+        margin: 0;
+    }
+}
+
+.title-box {
+    &.teams {padding-top: 126px;
+    
+        @include mobile {
+            padding-top: 59px;
+        }
+    }
+    .title {
+      font-size: 64px;
+      line-height: 71px;
+      letter-spacing: -0.64px;
+      margin-bottom: 20px;
+      font-weight: bold;
+
+      @include mobile {
+        margin-bottom: 11px;
+        font-size: 36px;
+        line-height: 50px;
+        letter-spacing: -.7px;
+      }
+    }
+    
+    .title-dsc {
+      display: inline;
+      vertical-align: middle;
+      padding-right: 30px;
+      font-size: 22px;
+      line-height: 32px;
+      letter-spacing: -0.44px;
+      font-weight: bold;
+
+      @include mobile {
+        padding-right: 20px;
+        margin-bottom: 9px;
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: -0.32px;
+      }
+    }
+  
+  }
+
+.link-more {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: normal;
+    letter-spacing: -0.36px;
+
+    @include mobile {
+        font-size: 12px;
+        line-height: 22px;
+        letter-spacing: -.24px;
+    }
+    &::before {
+        background-color: #000;
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+
+        @include mobile {
+            bottom: 2px;
+        }
+    
+    }
+}
+
+
+
+.nav-wrap{
+    position: absolute;
+    bottom: 0;right: 0;
+    display: flex;
+    gap: 5px;
+    .btn-nav{
+        width: 33px;
+        height: 32px;
+        background-position: -187px -172px;
+        @extend .sp-bg;
+        &.prev{}
+        &.next{
+            transform: rotate(180deg);
+        }
+        &.swiper-button-disabled{
+            opacity: 0.5;
+        }
+
+    }
+}
+
+
+.text-box {
+    overflow: hidden;
+    margin-top: 29px;
+    word-break: keep-all;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+    @include mobile {
+        margin-top: 21px;
+    }
+    .common-title {
+        display: inline;
+        padding-right: 26px;
+        line-height: 36px;
+        font-size: 25px;
+        letter-spacing: -0.5px;
+        font-weight: bold;
+        color: #000;
+
+        @include mobile {
+            padding-right: 20px;
+            font-size: 18px;
+            line-height: 28px;
+            letter-spacing: -.36px;
+
+        }
+    }
+
+    .link-more {
+        margin-top: 4px;
+        @include mobile {
+            display: none;
+        }
+    }
+
+    .common-dsc {
+        margin-top: 16px;
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: -0.28px;
+        color: #000;
+
+        font-family: "NanumSquare", "나눔스퀘어", "돋움", dotum, arial, sans-serif;
+    }
+}
+
+    
